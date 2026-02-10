@@ -3,9 +3,11 @@ const bcrypt = require("bcryptjs")
 const mongoose = require("mongoose")
 const User = require("./models/user.model.js")
 const app = express()
+const cors = require("cors")
 require("dotenv").config
 
 app.use(express.json())
+app.use(cors())
 
 app.get("/", (req, res) => {
     res.status(200).send("Welcome")
