@@ -170,7 +170,7 @@ app.delete("/api/users", async (req, res) => {
     }
 })
 
-mongoose.connect(`mongodb+srv://Reyansh:NEWPASSneverCatch@usersdb.edwuhvj.mongodb.net/UsersDB?appName=UsersDB`)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("Connected to the database!")
         const port = process.env.PORT || 1000
